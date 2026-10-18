@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My hobbies</title>
+</head>
+<body>
+  <h1>Students Grades</h1>
+  <div id="output"></div>
+
+  <script>
+    const students = [];
+    const output = document.getElementById("output");
+
+    try {
+      const num = parseInt(prompt("How many students do you want to add?"));
+
+      for (let i = 1; i <= num; i++) {
+        const name = prompt(`Enter the number ${i} student's name:`);
+        const age = parseInt(prompt(`Enter the number ${i} student's age:`));
+        const math = parseInt(prompt(`Enter the number ${i} student's grade for math out of 100%:`));
+        const english = parseInt(prompt(`Enter the number ${i} student's grade for english out of 100%:`));
+        const science = parseInt(prompt(`Enter the number ${i} student's grade for science out of 100%:`));
+
+        students.push({ name, age, math, english, science });
+      }
+
+      for (const s of students) {
+        const total = (s.math + s.english + s.science) / 3;
+
+        let rating = "";
+        if (total >= 90) rating = "Your grade is EXCELLENT";
+        else if (total >= 80) rating = "Your grade is VERY GOOD";
+
+        output.innerHTML += `
+          <p>
+            <b>Name:</b> ${s.name}<br>
+            <b>Age:</b> ${s.age}<br>
+            <b>Math:</b> ${s.math}<br>
+            <b>English:</b> ${s.english}<br>
+            <b>Science:</b> ${s.science}<br>
+            <b>The total mark is:</b> ${total.toFixed(1)}<br>
+            ${rating}
+          </p>
+          <hr>`;
+      }
+    } catch (e) {
+      output.textContent = "Something went wrong";
+    }
+  </script>
+</body>
+</html>

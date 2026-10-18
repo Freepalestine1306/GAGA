@@ -1,0 +1,13 @@
+Name = input("Enter your name:")
+Age = int(input("Enter your age:"))
+Favourite_color = input("Enter your favourite color:")
+Country = input("Enter the country you live in:")
+School_name = input("Enter your school name:")
+Grade_in_Math = float(input("Enter your grade in math:"))
+
+print("Hello",Name)
+print("Your age is",Age)
+print("Your favourite color is",Favourite_color)
+print("You live in",Country)
+print("your school name is",School_name)
+print("Your grade in Math is",Grade_in_Math)
