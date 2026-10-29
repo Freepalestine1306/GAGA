@@ -1,0 +1,26 @@
+#picture{
+    border-radius: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#title{
+    size: 40px;
+    text-align: center;
+    color: rgb(200, 94, 36);
+}
+
+body{
+    background-color: rgb(218, 218, 35) !important;
+}
+
+#list{
+    font-size: 20px;
+    color: rgb(132, 42, 114);
+}
+
+#vid2{
+    width: 500px;
+    height: 500px;
+}
