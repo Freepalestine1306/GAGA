@@ -23,4 +23,11 @@ body{
 #vid2{
     width: 500px;
     height: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.links{
+    font-size: 24px;
+    color: rgb(112, 103, 154);
 }
