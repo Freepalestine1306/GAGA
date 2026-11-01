@@ -1,0 +1,21 @@
+#w{
+    font-size: 35px;
+    text-align: center;
+}
+
+body{
+    background-color: rgb(157, 114, 114);
+    text-align: center;
+}
+
+a{
+    margin: 20px;
+    font-size: 25px;
+}
+#mbappe, #vini, #cr7 {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;      
+    border-radius: 20%;
+    margin: 10px;
+}
