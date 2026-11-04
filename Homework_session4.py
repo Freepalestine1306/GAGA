@@ -1,109 +1,45 @@
-import time
+from slow_print import slow_print, slow_input
 
-
-def plus(numbers):
-    return sum(numbers)
-
-
-def minus(numbers):
-    result = numbers[0]
-    for n in numbers[1:]:
-        result -= n
-    return result
-
-
-def multi(numbers):
-    result = 1
-    for n in numbers:
-        result *= n
-    return result
-
-
-def divi(numbers):
-    result = numbers[0]
-    for n in numbers[1:]:
-        result /= n
-    return result
-
-
-def ask_try_again():
-    while True:
-        again = input("Do you want to try again: ").strip().lower()
-
-        if again in ("no", "n"):
-            time.sleep(0.5)
-            print("Thank you for using calculator Python Edition")
-            time.sleep(1)
-            print("Goodbye!")
-            time.sleep(1)
-            return False
-
-        if again in ("yes", "y"):
-            return True
-
-        print("You did not enter a correct answer")
-        time.sleep(1)
-
+slow_print("Welcome to Calculator Python Edition")
 
 while True:
-    print("Welcome user to calculator Python Edition")
-    time.sleep(0.5)
-
     try:
-        howmany = int(input("How many numbers do you want to operate: "))
+        count = int(slow_input("How many numbers? "))
 
-        time.sleep(0.5)
-
-        if howmany < 1:
-            print("Please enter at least 1 number")
-            time.sleep(1)
+        if count < 1:
+            slow_print("Please enter at least 1 number")
             continue
 
         numbers = []
-        for i in range(howmany):
-            numbers.append(float(input(f"Enter number {i + 1}: ")))
-            time.sleep(0.5)
+        for i in range(count):
+            number = float(slow_input(f"Enter number {i + 1}: "))
+            numbers.append(number)
 
-        Op = input("Enter the operation you want, for example: plus, minus, multiplication, division: ").strip().lower()
-        time.sleep(0.5)
+        op = slow_input("Choose an operation (+  -  *  /): ")
+
+        if op not in ["+", "-", "*", "/"]:
+            slow_print("That is not a valid operation")
+        else:
+            answer = numbers[0]
+            for n in numbers[1:]:
+                if op == "+":
+                    answer = answer + n
+                elif op == "-":
+                    answer = answer - n
+                elif op == "*":
+                    answer = answer * n
+                elif op == "/":
+                    answer = answer / n
+
+            slow_print(f"The answer is: {answer}")
 
     except ValueError:
-        print("You did not enter a valid number")
-        time.sleep(1)
-        if not ask_try_again():
-            break
-        continue
+        slow_print("That is not a valid number")
+    except ZeroDivisionError:
+        slow_print("You can't divide by zero")
 
-    if Op in ("plus", "+"):
-        print("The answer for this equation is: ")
-        time.sleep(1)
-        print(plus(numbers))
-        time.sleep(0.5)
-
-    elif Op in ("minus", "-"):
-        print("The answer for this equation is: ")
-        time.sleep(1)
-        print(minus(numbers))
-        time.sleep(0.5)
-
-    elif Op in ("multiplication", "*"):
-        print("The answer for this equation is: ")
-        time.sleep(1)
-        print(multi(numbers))
-        time.sleep(0.5)
-
-    elif Op in ("division", "/"):
-        print("The answer for this equation is: ")
-        time.sleep(1)
-        try:
-            print(divi(numbers))
-        except ZeroDivisionError:
-            print("Can't divide by zero")
-        time.sleep(0.5)
-
-    else:
-        print("You did not enter a valid operation")
-        time.sleep(1)
-
-    if not ask_try_again():
+    again = slow_input("Do you want to try again? (yes/no): ").lower()
+    if again not in ["yes", "y"]:
+        slow_print("Thank you for using Calculator Python Edition")
+        slow_print("Goodbye!")
         break

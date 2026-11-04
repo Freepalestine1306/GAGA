@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="./mini-coi.js"></script>
+<link rel="stylesheet" href="white-terminal.css">
+<link rel="stylesheet" href="https://pyscript.net/releases/2026.7.1/core.css">
+<script type="module" src="https://pyscript.net/releases/2026.7.1/core.js"></script>
+<link rel="icon" type="img/png" href="calculator.png">
+</head>
+<body>
+<script type="py" terminal worker>
+import time
+
+def slow_print(text, delay=0.03):
+    for char in text:
+        print(char, end="", flush=True)
+        time.sleep(delay)
+    print()
+
+def slow_input(prompt, delay=0.03):
+    return input(prompt)
+
+
+slow_print("Welcome to Calculator Python Edition")
+
+while True:
+    try:
+        count = int(slow_input("How many numbers? "))
+
+        if count < 1:
+            slow_print("Please enter at least 1 number")
+            continue
+
+        numbers = []
+        for i in range(count):
+            number = float(slow_input(f"Enter number {i + 1}: "))
+            numbers.append(number)
+
+        op = slow_input("Choose an operation (+  -  *  /): ")
+
+        if op not in ["+", "-", "*", "/"]:
+            slow_print("That is not a valid operation")
+        else:
+            answer = numbers[0]
+            for n in numbers[1:]:
+                if op == "+":
+                    answer = answer + n
+                elif op == "-":
+                    answer = answer - n
+                elif op == "*":
+                    answer = answer * n
+                elif op == "/":
+                    answer = answer / n
+
+            slow_print(f"The answer is: {answer}")
+
+    except ValueError:
+        slow_print("That is not a valid number")
+    except ZeroDivisionError:
+        slow_print("You can't divide by zero")
+
+    again = slow_input("Do you want to try again? (yes/no): ").lower()
+    if again not in ["yes", "y"]:
+        slow_print("Thank you for using Calculator Python Edition")
+        slow_print("Goodbye!")
+        break
+
+</script>
+</body>
+</html>
