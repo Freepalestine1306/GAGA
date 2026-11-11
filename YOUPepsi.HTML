@@ -1,42 +1,128 @@
 <!DOCTYPE html>
+<head>
+    <title>YouPepsi</title>
 
-<html>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel = "icon" type="image/png" href="c:\Users\sando\Downloads\YouPepsi_Logo_1MB.png">
+    <link href="Style_for_youpepsi.css" rel="stylesheet">
+</head>
+<body>
 
-    
+    <script>
+        alert("Welcome to my channel");
+    </script>
 
-    <head>
-        <link rel="stylesheet" href="style_fro_youpepsi.css">
-        <title>YOUPepsi channel</title>
-    </head>
-
-    <body>
-        <img src="C:\Users\sando\GAGA\YouPepsi_Logo_outline_only.png" id = "logo">
-        <h1 id = "title">YOUPepsi channel</h1>
-        <br>
-            <h1 id = "hello">Welcome to YouPepsi! 🎮</h1>
-        <p class = "welcoming">
-            <br>
-            <br>
-            Fortnite on PS5, with clean kills, clutch moments, box fights, build edits, and the occasional epic fail 💀
-            <br>
-            <br>
-            Expect meme-sound edits, aura moments, and Shorts with the funniest and hardest-hitting plays. Sometimes I win the fight, and sometimes the fight wins me.
-            <br>
-            <br>
-            <ol class = "welcoming">
-                <li>🔥 New Shorts and clips on the channel</li>
-                <br>
-                <li>👍 Like if you enjoyed it</li>
-                <br>
-                <li>🔔 Subscribe to YouPepsi and do not miss the next one!</li>
-            </ol>
-            <br>
-            <br>
-            <br>
-            <img src="https://tse2.mm.bing.net/th/id/OIP.OSK7oOC88Vs6-3QGmq-BfAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" id = "ps5">
-        </p>
-        <div id = "link">
-            <a href="https://www.youtube.com/@YOUPepsiFort" target="_blank">Click here to see the channel</a>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="https://www.youtube.com/@YOUPepsiFort" target="_blank">YouPepsi</a>
+            <div>
+                <a class="btn btn-outline-light btn-sm" href="https://www.youtube.com/@YOUPepsiFort/videos" target="_blank">Videos</a>
+                <a class="btn btn-outline-light btn-sm" href="https://www.youtube.com/@YOUPepsiFort/posts" target="_blank">About</a>
+            </div>
         </div>
-    </body>
+    </nav>
+
+    <div class="bg-primary text-white text-center py-5">
+        <h1 class="display-3 fw-bold">YouPepsi</h1>
+        <p class="lead">PS5 gameplay edits, Shorts and Rocket League</p>
+
+        <a class="btn btn-light btn-lg" href="https://www.youtube.com/@YOUPepsiFort" target="_blank">Subscribe</a>
+        <button onclick="alert('The test has been sucssesful!')" class="btn btn-light btn-lg">Test alert</button>
+    </div>
+
+    <script>
+        x = 10
+        g = 5
+        total = g + x
+        console.log(`The total is`, total)
+
+        if (total > 70)
+        {
+            console.log(`The total is bigger than 70`)
+        }
+        else if (total < 70)
+        {
+            console.log(`The total is less than 70`)
+        }
+        else
+        {
+            console.log(`Something went wrong!!`)
+        }
+    </script>
+
+    <div class="container py-5" id="videos">
+        <h2 class="text-center mb-4">What I Make</h2>
+
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Aura Edits</h5>
+                        <p class="card-text">My best kills with aura music and a dark look.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Sad Edits</h5>
+                        <p class="card-text">When things go wrong in the game.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Happy Edits</h5>
+                        <p class="card-text">The funny and happy moments.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Yippee Edits</h5>
+                        <p class="card-text">Meme edits with lots of sound effects.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Rocket League</h5>
+                        <p class="card-text">Knockouts and ball touches.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Shorts</h5>
+                        <p class="card-text">Quick clips of my kills with a rewind replay.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bg-col-md-4 mb-4" id="about">
+        <div class="container text-center">
+            <h2>About Me</h2>
+            <p>I record my PS5 gameplay and turn it into edits and Shorts. New videos all the time!</p>
+            <a class="btn btn-primary" href="https://www.youtube.com/@YOUPepsiFort" target="_blank">Subscribe to YouPepsi</a>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Thank you for Seeing this I hope you subscribe to me</p>
+    </footer>
+
+</body>
 </html>
